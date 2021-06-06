@@ -1,4 +1,4 @@
-# Word completion for Linux/X11 desktops using [Autokey](https://github.com/autokey/autokey) and [rofi](https://github.com/davatorium/rofi).
+# Word completion for Linux/X11 using [Autokey](https://github.com/autokey/autokey) and [rofi](https://github.com/davatorium/rofi).
 
 ## Installation
 
@@ -6,7 +6,7 @@ Install [Autokey](https://github.com/autokey/autokey) and [rofi](https://github.
 
 Add the shell scripts to your path:
 
-`cp ./shell/* /your/path`
+`cp -r ./shell/* /your/path/`
 
 Add a list of words you'd like to use, [this](https://github.com/first20hours/google-10000-english/blob/master/google-10000-english.txt) for example:
 
@@ -14,7 +14,7 @@ Add a list of words you'd like to use, [this](https://github.com/first20hours/go
 
 Make the python script available to [Autokey](https://github.com/autokey/autokey) and bind it to a hotkey:
 
-`cp ./completeWord.py ~/.config/autokey/data`
+`cp ./autokey/completeWord.py ~/.config/autokey/data/`
 
 ## Usage
 

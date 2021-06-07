@@ -12,9 +12,9 @@ Add a list of words you'd like to use, [this](https://github.com/first20hours/go
 
 `cp yourWords.txt /your/path/complete-word/words/.local/`
 
-Make the python script available to [Autokey](https://github.com/autokey/autokey) and bind it to a hotkey:
+Add the python script to [Autokey](https://github.com/autokey/autokey) and bind it to a hotkey:
 
-`cp ./autokey/completeWord.py ~/.config/autokey/data/`
+`cp -r ./autokey/* ~/.config/autokey/data/scripts/`
 
 ## Usage
 

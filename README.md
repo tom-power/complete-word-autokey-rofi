@@ -1,5 +1,9 @@
 # Word completion for Linux/X11 using [Autokey](https://github.com/autokey/autokey) and [rofi](https://github.com/davatorium/rofi).
 
+Simple word completion for use with (almost) any application.
+
+![Alt Text](https://github.com/tom-power/complete-word-autokey-rofi/blob/master/assets/demo.gif)
+
 ## Installation
 
 Install [Autokey](https://github.com/autokey/autokey) and [rofi](https://github.com/davatorium/rofi).

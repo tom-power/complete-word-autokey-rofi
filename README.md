@@ -16,7 +16,7 @@ Add a list of words you'd like to use, [this](https://github.com/first20hours/go
 
 `cp yourWords.txt /your/path/complete-word/words/.local/`
 
-Add the python script to [Autokey](https://github.com/autokey/autokey) and bind it to a hotkey:
+Add the autokey script to [Autokey](https://github.com/autokey/autokey) and bind it to a hotkey (default is `alt+ctrl+space`):
 
 `cp -r ./autokey/* ~/.config/autokey/data/scripts/`
 

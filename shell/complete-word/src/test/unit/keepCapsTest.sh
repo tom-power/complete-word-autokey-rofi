@@ -7,4 +7,4 @@ assert "$keepCaps Com complete" "Complete"
 assert "$keepCaps Com autocomplete" "Autocomplete"
 assert "$keepCaps com complete" "complete"
 assert "$keepCaps com autocomplete" "autocomplete"
-assert_end keepTheCapitals
+assert_end shouldKeepTheFirstCapitalLetter

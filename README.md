@@ -4,25 +4,19 @@ Simple word completion for use with (almost) any application.
 
 ![Alt Text](https://github.com/tom-power/complete-word-autokey-rofi/blob/master/assets/demo.gif)
 
+## Usage
+
+Put your cursor at the end of some text and press `alt+ctrl+space` to get completions for it.
+
 ## Installation
 
 Install [Autokey](https://github.com/autokey/autokey) and [rofi](https://github.com/davatorium/rofi).
 
-Add the shell scripts to your path:
+Configure paths in `.local/install.config.sh` and `shell/complete-word/.local/completeWord.config.sh`.
 
-`cp -r ./shell/* /your/path/`
+Add a list of words you'd like to use ([this](https://github.com/first20hours/google-10000-english/blob/master/google-10000-english-no-swears.txt) for example) to `shell/complete-word/words/.local/`
 
-Add a list of words you'd like to use, [this](https://github.com/first20hours/google-10000-english/blob/master/google-10000-english.txt) for example:
-
-`cp yourWords.txt /your/path/complete-word/words/.local/`
-
-Add the autokey script to [Autokey](https://github.com/autokey/autokey) and bind it to a hotkey (default is `alt+ctrl+space`):
-
-`cp -r ./autokey/* ~/.config/autokey/data/scripts/`
-
-## Usage
-
-Put your cursor at the end of some text you'd like to complete and press your hotkey.
+Run `./install.sh`
 
 #### TODO
 

@@ -7,7 +7,7 @@ cp -r ./shell/completeWord.sh $yourPath
 
 source $root/shell/.local/completeWord.config.sh
 
-cp -r ./shell/complete-word* $completeWordPath
+cp -r ./shell/complete-word/* $completeWordPath
 
 cp -r ./autokey/* ~/.config/autokey/data/scripts/
 

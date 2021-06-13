@@ -6,7 +6,7 @@ Simple word completion for use with (almost) any application.
 
 ## Usage
 
-Put your cursor at the end of some text and press `alt+ctrl+space` to get completions for it.
+Put your cursor at the end of some text and press your hotkey.
 
 ## Installation
 
@@ -17,6 +17,8 @@ Configure paths in `.local/install.config.sh` and `shell/complete-word/.local/co
 Add a list of words you'd like to use ([this](https://github.com/first20hours/google-10000-english/blob/master/google-10000-english-no-swears.txt) for example) to `shell/complete-word/words/.local/`
 
 Run `./install.sh`
+
+Add [Autokey](https://github.com/autokey/autokey) for `completeWord.py`
 
 #### TODO
 

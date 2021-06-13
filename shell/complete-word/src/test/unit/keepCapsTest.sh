@@ -1,5 +1,4 @@
 #!/bin/bash
-
 source "lib/assert.sh"
 keepCaps="src/main/words/keepCaps.sh"
 

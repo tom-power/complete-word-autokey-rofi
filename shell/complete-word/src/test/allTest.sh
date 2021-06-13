@@ -1,5 +1,5 @@
 #!/bin/bash
-export test="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+test="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
 unit="${test}/unit"
 echo "-------------------------unit-------------------------------------"

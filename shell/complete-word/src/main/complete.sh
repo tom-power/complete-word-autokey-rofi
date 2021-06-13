@@ -7,7 +7,7 @@ for arg in "$@"; do
   case "$arg" in
     "--complete")
         set -- "$@" "-c"
-        ;;
+        ;;    
     *)
         set -- "$@" "$arg"
         ;;
@@ -20,6 +20,10 @@ while getopts "c:" arg; do
             selection=${OPTARG}
             completion=$($root/words/all.sh | $chooseSh $selection)
             $root/words/keepCaps.sh $selection $completion
+            ;;
+        *)
+            echo $options
+            exit 0;
             ;;
     esac
 done

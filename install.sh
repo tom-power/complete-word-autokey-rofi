@@ -7,6 +7,9 @@ cp -r ./shell/completeWord.sh $yourPath
 
 source $root/shell/.local/completeWord.config.sh
 
+if [[ ! -d $completeWordPath ]]; then
+  mkdir $completeWordPath
+fi
 cp -r ./shell/complete-word/* $completeWordPath
 
 cp -r ./autokey/* ~/.config/autokey/data/scripts/

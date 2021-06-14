@@ -2,6 +2,6 @@
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 word=$1
 if [[ ! -z "$word" ]]; then
-  addFile=$root/.local/added.txt
+  addFile=~/.config/complete-word-autokey-rofi/words/added.txt
   grep -x $word $addFile || echo $word >> $addFile
 fi

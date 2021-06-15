@@ -15,9 +15,9 @@ Place your cursor at the end of some text and press bound keys to complete or ad
 
 Install [Autokey](https://github.com/autokey/autokey) and [rofi](https://github.com/davatorium/rofi).
 
-Configure paths in `.config`.
+Configure paths in `install.config.sh` and `.config/install.config.sh`.
 
-Add a list of words to use ([this](https://github.com/first20hours/google-10000-english/blob/master/google-10000-english-no-swears.txt) for example) to `.config/complete-word-autokey-rofi/words`, alternatively skip this step and add words as you go using `complete-word/add.py`.
+Optionally add list of words to use ([this](https://github.com/first20hours/google-10000-english/blob/master/google-10000-english-no-swears.txt) for example) to `.config/complete-word-autokey-rofi/words`, or add words as you go using `complete-word/add.py`.
 
 Run `./install.sh`.
 

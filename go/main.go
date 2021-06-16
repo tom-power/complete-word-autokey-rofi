@@ -2,7 +2,7 @@ package main
 
 import (
 	"./completeword"
-	// "flat"
+	// "flag"
 )
 
 func main() {
@@ -21,5 +21,5 @@ func main() {
     // fmt.Println("fork:", *boolPtr)
     // fmt.Println("svar:", svar)
     // fmt.Println("tail:", flag.Args())
-	completeword.Complete()
+	completeword.Complete("word")
 }

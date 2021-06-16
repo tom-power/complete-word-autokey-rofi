@@ -5,11 +5,16 @@ import (
 	"os/user"
 )
 
-// Complete is ...
+const wordsPath = "/.config/complete-word-autokey-rofi/words/"
+
+// Complete a selection
 func Complete(selection string) {
 	usr, _ := user.Current()
-	dir := usr.HomeDir
-	words, err := words(dir + "/.config/complete-words-autokey-rofi/words/")
+	home := usr.HomeDir
+	words, err := words(home + wordsPath)
+	if err != nil {
+		fmt.Printf(err.Error())
+	}
 	completion, err := choose(selection, words)
 	if err != nil {
 		fmt.Printf(err.Error())

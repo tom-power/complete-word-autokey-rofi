@@ -7,12 +7,12 @@ import (
 
 func Test_readWords(t *testing.T) {
 	t.Run("can get words", func(t *testing.T) {
-    words, err := readWords(strings.NewReader("one\nword\nper\nline"))
-		if (err != nil) {
+		words, err := readWords(strings.NewReader("one\nword\nper\nline"))
+		if err != nil {
 			t.Errorf("error = %v", err)
 		}
-    if (words != "one word per line") {
-       t.Errorf("error = %v", words)
-    }
+		if words != "one\nword\nper\nline" {
+			t.Errorf("error = %v", words)
+		}
 	})
 }

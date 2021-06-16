@@ -1,9 +1,9 @@
 package completeword
 
 import (
-   "os"
-   "os/exec"
-	 "strings"
+	"os"
+	"os/exec"
+	"strings"
 )
 
 const rofi =
@@ -24,3 +24,4 @@ func choose(selection string, words string) (string, error) {
     result := strings.TrimRight(string(out), "\n")
     return result, err
 }
+

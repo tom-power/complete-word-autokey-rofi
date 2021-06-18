@@ -5,11 +5,18 @@ import (
 	"io"
 	"io/ioutil"
 	"os"
+	"os/user"
 )
 
-type GetWords func(string) ([]string, error)
+type GetWords func() ([]string, error)
 
-var WordsFromDir = func(dir string) ([]string, error) {
+const wordsConfigPath = "/.config/complete-word-autokey-rofi/words/"
+
+var WordsFromHomeDir = func() ([]string, error) { usr, _ := user.Current()
+	return wordsFromDir(usr.HomeDir + wordsConfigPath)
+}
+
+func wordsFromDir(dir string) ([]string, error) {
 	files, err := ioutil.ReadDir(dir)
 	if err != nil {
 		return []string{}, err

@@ -11,7 +11,7 @@ func Test_readWords(t *testing.T) {
 		if err != nil {
 			t.Errorf("error = %v", err)
 		}
-		if words != "one\nword\nper\nline" {
+		if strings.Join(words, "\n") != "one\nword\nper\nline" {
 			t.Errorf("error = %v", words)
 		}
 	})

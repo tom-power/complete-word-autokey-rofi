@@ -5,13 +5,14 @@ import (
 	"io"
 	"io/ioutil"
 	"os"
-	"strings"
 )
 
-func wordsFromDir(dir string) (string, error) {
+type GetWords func(string) ([]string, error)
+
+var WordsFromDir = func(dir string) ([]string, error) {
 	files, err := ioutil.ReadDir(dir)
 	if err != nil {
-		return "", err
+		return []string{}, err
 	}
 	return wordsFromFiles(filePaths(dir, files))
 }
@@ -24,37 +25,37 @@ func filePaths(dir string, files []os.FileInfo) []string {
 	return filePaths
 }
 
-func wordsFromFiles(filePaths []string) (string, error) {
-	var words string
+func wordsFromFiles(filePaths []string) ([]string, error) {
+	var words []string
 	for _, filePath := range filePaths {
 		fileWords, err := wordsFromFile(filePath)
 		if err != nil {
-			return "", err
+			return words, err
 		}
-		words = words + fileWords
+	  words = append(words, fileWords...)
 	}
 	return words, nil
 }
 
-func wordsFromFile(filePath string) (string, error) {
+func wordsFromFile(filePath string) ([]string, error) {
 	fileReader, err := os.Open(filePath)
 	if err != nil {
-		return "", err
+	  return []string{}, err
 	}
 	fileWords, err := readWords(fileReader)
 	if err != nil {
-		return "", err
+		return []string{}, err
 	}
 	return fileWords, err
 }
 
-func readWords(handle io.Reader) (string, error) {
+func readWords(handle io.Reader) ([]string, error) {
 	var words []string
 	scanner := bufio.NewScanner(handle)
 	for scanner.Scan() {
 		words = append(words, scanner.Text())
 	}
-	return strings.Join(words, "\n"), scanner.Err()
+	return words, scanner.Err()
 }
 
 func writeWord(path string, word string) error {

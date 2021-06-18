@@ -15,7 +15,7 @@ func Add(selection string) {
 	if err != nil {
 		fmt.Printf(err.Error())
 	}
-	word, err := choose(selection, words)
+	word, err := ChooseWordUsingRofi(selection, words)
 	if err != nil {
 		fmt.Printf(err.Error())
 	}

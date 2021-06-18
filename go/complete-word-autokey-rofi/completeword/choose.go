@@ -17,7 +17,10 @@ const rofi =
     "sort -sorting-method levenshtein " +
     "-filter "
 
-var ChooseWordUsingRofi = func(selection string, words []string) (string, error) {
+var ChooseWordUsingRofi = 
+func(
+  selection string, 
+  words []string) (string, error) {
     var cmd *exec.Cmd
     cmd = exec.Command("sh", "-c", rofi + selection)
     cmd.Stderr = os.Stderr

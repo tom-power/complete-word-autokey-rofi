@@ -15,11 +15,16 @@ Place your cursor at the end of some text and press bound keys to complete or ad
 
 Install [Autokey](https://github.com/autokey/autokey) and [rofi](https://github.com/davatorium/rofi).
 
-Configure paths in `install.config.sh` and `.config/install.config.sh`.
+Install [go](https://golang.org/) then build a binary:
 
-Optionally add list of words to use ([this](https://github.com/first20hours/google-10000-english/blob/master/google-10000-english-no-swears.txt) for example) to `.config/complete-word-autokey-rofi/words`, or add words as you go using `complete-word/add.py`.
+```
+git clone https://github.com/tom-power/complete-word-autokey-rofi.git &&
+cd ./complete-word-autokey-rofi/go && ./build.sh
+```
 
-Run `./install.sh`.
+Copy a .txt file containing words ([this](https://github.com/first20hours/google-10000-english/blob/master/google-10000-english-no-swears.txt) for example) to be suggested as completions to `./.config/complete-word-autokey-rofi/words`, you can update these directly as you need and add words using `complete-word/add.py`.
+
+Configure your path in `install.config.sh` and run `./install.sh` to copy your binary, config and autokey scripts.
 
 Bind keys to the [Autokey](https://github.com/autokey/autokey) scripts.
 

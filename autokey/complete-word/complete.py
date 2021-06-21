@@ -11,7 +11,7 @@ except:
 
 word = selection
 try:
-    word = system.exec_command("completeWord.sh --complete " + selection)
+    word = system.exec_command("completeWord --complete " + selection)
     time.sleep(0.1)
 except:
     pass

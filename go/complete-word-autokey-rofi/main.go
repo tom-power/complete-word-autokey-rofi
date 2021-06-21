@@ -23,6 +23,9 @@ func main() {
   	}
   	fmt.Printf(completion)
 	case "--add":
-		completeword.Add(*wordToAdd)
+		err := completeword.Add(*wordToAdd)
+		if err != nil {
+    	fmt.Printf(err.Error())
+  	}
 	}
 }

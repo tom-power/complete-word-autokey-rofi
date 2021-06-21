@@ -66,13 +66,3 @@ func readWords(handle io.Reader) ([]string, error) {
 	return words, scanner.Err()
 }
 
-func writeWord(path string, word string) error {
-	handle, err := os.OpenFile(path, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
-	if err != nil {
-		return err
-	}
-	if _, err := handle.Write([]byte(word)); err != nil {
-		return err
-	}
-	return nil
-}

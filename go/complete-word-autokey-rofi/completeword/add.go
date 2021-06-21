@@ -1,25 +1,32 @@
 package completeword
 
 import (
-	"fmt"
+	"os"
 	"os/user"
 )
 
-const addPath = "/.config/complete-word-autokey-rofi/words/add.txt"
+const addedPath = "/.config/complete-word-autokey-rofi/words/added.txt"
 
-func Add(selection string) {
+func Add(selection string) error {
 	usr, _ := user.Current()
-	home := usr.HomeDir
-	words, err := wordsFromFile(home + addPath)
+	addPath := usr.HomeDir + addedPath
+	words, err := wordsFromFile(addPath)
 	if err != nil {
-		fmt.Printf(err.Error())
+		return err
 	}
 	word, err := ChooseWordUsingRofi(words, selection)
 	if err != nil {
-		fmt.Printf(err.Error())
+		return err
 	}
-	writeWord(addPath, word)
+	return writeWord(addPath, word)
+}
+
+func writeWord(path string, word string) error {
+	file, err := os.OpenFile(path, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
-		fmt.Printf(err.Error())
+		return err
 	}
+	_, err = file.Write([]byte(word))
+	return err
+
 }

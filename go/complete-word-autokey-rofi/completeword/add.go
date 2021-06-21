@@ -7,7 +7,6 @@ import (
 
 const addPath = "/.config/complete-word-autokey-rofi/words/add.txt"
 
-// Add a word
 func Add(selection string) {
 	usr, _ := user.Current()
 	home := usr.HomeDir
@@ -15,7 +14,7 @@ func Add(selection string) {
 	if err != nil {
 		fmt.Printf(err.Error())
 	}
-	word, err := ChooseWordUsingRofi(selection, words)
+	word, err := ChooseWordUsingRofi(words, selection)
 	if err != nil {
 		fmt.Printf(err.Error())
 	}

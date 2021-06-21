@@ -12,7 +12,8 @@ type GetWords func() ([]string, error)
 
 const wordsConfigPath = "/.config/complete-word-autokey-rofi/words/"
 
-var WordsFromHomeDir = func() ([]string, error) { usr, _ := user.Current()
+var WordsFromHomeDir = func() ([]string, error) {
+	usr, _ := user.Current()
 	return wordsFromDir(usr.HomeDir + wordsConfigPath)
 }
 
@@ -39,7 +40,7 @@ func wordsFromFiles(filePaths []string) ([]string, error) {
 		if err != nil {
 			return words, err
 		}
-	  words = append(words, fileWords...)
+		words = append(words, fileWords...)
 	}
 	return words, nil
 }
@@ -47,7 +48,7 @@ func wordsFromFiles(filePaths []string) ([]string, error) {
 func wordsFromFile(filePath string) ([]string, error) {
 	fileReader, err := os.Open(filePath)
 	if err != nil {
-	  return []string{}, err
+		return []string{}, err
 	}
 	fileWords, err := readWords(fileReader)
 	if err != nil {

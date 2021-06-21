@@ -3,8 +3,8 @@ package main
 import (
 	"./completeword"
 	"flag"
-	"os"
 	"fmt"
+	"os"
 )
 
 var wordToComplete = flag.String("complete", "", "a string")
@@ -15,17 +15,19 @@ func main() {
 	switch os.Args[1] {
 	case "--complete":
 		completion, err := completeword.Complete(
-		  completeword.WordsFromHomeDir,
-		  completeword.ChooseWordUsingRofi,
-		  *wordToComplete)
-    if err != nil {
-    	fmt.Printf(err.Error())
-  	}
-  	fmt.Printf(completion)
+			completeword.WordsFromHomeDir,
+			completeword.ChooseWordUsingRofi,
+			*wordToComplete)
+		if err != nil {
+			fmt.Printf(*wordToComplete)
+		}
+		fmt.Printf(completion)
 	case "--add":
 		err := completeword.Add(*wordToAdd)
 		if err != nil {
-    	fmt.Printf(err.Error())
-  	}
+			fmt.Printf(err.Error())
+		}
+	default:
+		fmt.Printf("usage --complete <partialWord> | --add <partialWord>")
 	}
 }

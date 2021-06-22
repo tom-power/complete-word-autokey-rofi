@@ -19,7 +19,7 @@ Clone this project:
 
 ```
 git clone https://github.com/tom-power/complete-word-autokey-rofi.git &&
-./complete-word-autokey-rofi
+cd ./complete-word-autokey-rofi
 ```
 
 Download a matching binary from the latest [release](https://github.com/tom-power/complete-word-autokey-rofi/releases) and copy to your path i.e:

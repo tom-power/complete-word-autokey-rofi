@@ -8,24 +8,50 @@ Place your cursor at the end of some text and press bound keys to complete or ad
 
 ## Autokey scripts
 
-- `complete-word/complete.py` complete the selected text from your words
-- `complete-word/add.py` add a word to your words using the selected text
+- `complete.py` complete the selected text from your words
+- `add.py` add a word to your words using the selected text
 
 ## Installation
 
 Install [Autokey](https://github.com/autokey/autokey) and [rofi](https://github.com/davatorium/rofi).
 
-Install [go](https://golang.org/) then build a binary:
+Clone the project:
 
 ```
 git clone https://github.com/tom-power/complete-word-autokey-rofi.git &&
-cd ./complete-word-autokey-rofi/go && ./build.sh
+./complete-word-autokey-rofi
 ```
 
-Copy a .txt file containing words ([this](https://github.com/first20hours/google-10000-english/blob/master/google-10000-english-no-swears.txt) for example) to be suggested as completions to `./.config/complete-word-autokey-rofi/words`, you can update these directly as you need and add words using `complete-word/add.py`.
+Download a matching binary from the latest [release](https://github.com/tom-power/complete-word-autokey-rofi/releases) and copy to your path i.e:
 
-Configure your path in `install.config.sh` and run `./install.sh` to copy your binary, config and autokey scripts.
+```
+wget -O /your/path/completeWord https://github.com/tom-power/complete-word-autokey-rofi/releases/download/v0.1/completeWord_linuxamd64
+```
 
-Bind keys to the [Autokey](https://github.com/autokey/autokey) scripts.
+Or to build yourself install [go](https://golang.org/) then:
+
+```
+cd ./go  &&
+./build.sh &&
+cp build/completeWord /your/path/completeWord
+
+```
+
+Add a `.txt` file containing words to use as suggestions to the `words` directory i.e:
+
+```
+cd ./words &&
+wget https://raw.githubusercontent.com/first20hours/google-10000-english/master/google-10000-english-no-swears.txt
+```
+
+After installation you can edit this in `~/.config/complete-word-autokey-rofi/words`, and/or add new words using `complete-word/add.py`.
+
+Run the install script to copy your words and autokey scripts:
+
+```
+./install.sh
+```
+
+Bind keys to the [Autokey](https://github.com/autokey/autokey) scripts, you should see them under `scripts/complete-word` in the [Autokey](https://github.com/autokey/autokey) main window.
 
 

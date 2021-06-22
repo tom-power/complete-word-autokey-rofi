@@ -15,7 +15,7 @@ Place your cursor at the end of some text and press bound keys to complete or ad
 
 Install [Autokey](https://github.com/autokey/autokey) and [rofi](https://github.com/davatorium/rofi).
 
-Clone the project:
+Clone this project:
 
 ```
 git clone https://github.com/tom-power/complete-word-autokey-rofi.git &&

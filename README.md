@@ -28,7 +28,7 @@ Download a matching binary from the latest [release](https://github.com/tom-powe
 wget -O /your/path/completeWord https://github.com/tom-power/complete-word-autokey-rofi/releases/download/v0.1/completeWord_linuxamd64
 ```
 
-Or to build yourself install [go](https://golang.org/) then:
+Or to build yourself, install [go](https://golang.org/) then:
 
 ```
 cd ./go  &&
@@ -44,7 +44,7 @@ cd ./words &&
 wget https://raw.githubusercontent.com/first20hours/google-10000-english/master/google-10000-english-no-swears.txt
 ```
 
-After installation you can edit this in `~/.config/complete-word-autokey-rofi/words`, and/or add new words using `complete-word/add.py`.
+After installation you can edit this in `~/.config/complete-word-autokey-rofi/words`, and/or add new words using `add.py`.
 
 Run the install script to copy your words and autokey scripts:
 

@@ -12,7 +12,7 @@ type GetWords func() ([]string, error)
 
 const wordsConfigPath = "/.config/complete-word-autokey-rofi/words/"
 
-var WordsFromHomeDir = func() ([]string, error) {
+var WordsFromHomeDir GetWords = func() ([]string, error) {
 	usr, _ := user.Current()
 	return wordsFromDir(usr.HomeDir + wordsConfigPath)
 }
@@ -65,4 +65,3 @@ func readWords(handle io.Reader) ([]string, error) {
 	}
 	return words, scanner.Err()
 }
-

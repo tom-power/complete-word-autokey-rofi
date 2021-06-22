@@ -1,2 +1,2 @@
 go.mod
-*build*
+build/*

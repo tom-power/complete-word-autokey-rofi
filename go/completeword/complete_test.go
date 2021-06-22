@@ -4,11 +4,11 @@ import (
 	"testing"
 )
 
-var chooseFirst = func(words []string, selection string) (string, error) {
+var chooseFirst ChooseWord = func(words []string, selection string) (string, error) {
 	return words[0], nil
 }
 
-var testWords = func() ([]string, error) {
+var testWords GetWords = func() ([]string, error) {
 	return []string{"test", "testing"}, nil
 }
 

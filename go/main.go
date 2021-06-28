@@ -24,12 +24,12 @@ func main() {
 		fmt.Printf(completion)
 	case "--add":
 		err := completeword.Add(
-      completeword.WordsFromHomeDir,
+			completeword.WordsFromHomeDir,
 			completeword.ChooseWordUsingRofi,
-      *wordToAdd,
-      completeword.AddedPath,
-      completeword.WriteWordToPath,
-    )
+			*wordToAdd,
+			completeword.AddedPath,
+			completeword.WriteWordToPath,
+		)
 		if err != nil {
 			fmt.Printf(err.Error())
 		}

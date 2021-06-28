@@ -23,7 +23,13 @@ func main() {
 		}
 		fmt.Printf(completion)
 	case "--add":
-		err := completeword.Add(*wordToAdd)
+		err := completeword.Add(
+      completeword.WordsFromHomeDir,
+			completeword.ChooseWordUsingRofi,
+      *wordToAdd,
+      completeword.AddedPath,
+      completeword.WriteWordToPath,
+    )
 		if err != nil {
 			fmt.Printf(err.Error())
 		}

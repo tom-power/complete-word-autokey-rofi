@@ -53,8 +53,8 @@ func Add(
 	if isIn(word, words) {
 		return errors.New("can't add duplicate word")
 	}
-  path, err := addPath()
-  if err != nil {
+	path, err := addPath()
+	if err != nil {
 		return err
 	}
 	return writeWord(path, word)

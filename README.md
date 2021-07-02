@@ -41,7 +41,7 @@ Add a `.txt` file containing words to use as suggestions to the `words` director
 
 ```
 cd ./words &&
-wget https://raw.githubusercontent.com/first20hours/google-10000-english/master/google-10000-english-no-swears.txt
+curl https://raw.githubusercontent.com/first20hours/google-10000-english/master/20k.txt -s | grep -vwE '\w{1,6}' > gt6.txt
 ```
 
 After installation you can edit this in `~/.config/complete-word-autokey-rofi/words`, and/or add new words using `add.py`.

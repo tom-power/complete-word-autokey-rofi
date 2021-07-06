@@ -1,5 +1,17 @@
 package completeword
 
+import (
+	"strings"
+	"unicode"
+)
+
+func keepTitleCase(selection string, completion string) string {
+	if unicode.IsUpper([]rune(selection)[0]) {
+    return strings.Title(completion)
+	}
+  return completion
+}
+
 func Complete(
 	getWords GetWords,
 	chooseWord ChooseWord,
@@ -8,5 +20,9 @@ func Complete(
 	if err != nil {
 		return "", err
 	}
-	return chooseWord(words, selection)
+	completion, err := chooseWord(words, strings.ToLower(selection))
+	if err != nil {
+		return "", err
+	}
+	return keepTitleCase(selection, completion), nil
 }

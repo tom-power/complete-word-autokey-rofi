@@ -37,6 +37,8 @@ cp build/completeWord /your/path/completeWord
 
 ```
 
+If you configure your path in `install.conf.sh`, binaries will be built and copied when `install.sh` is run.
+
 Add a `.txt` file containing words to use as suggestions to the `words` directory i.e:
 
 ```
@@ -46,7 +48,7 @@ curl https://raw.githubusercontent.com/first20hours/google-10000-english/master/
 
 After installation you can edit this in `~/.config/complete-word-autokey-rofi/words`, and/or add new words using `add.py`.
 
-Run the install script to copy your words and autokey scripts:
+Run the install script to copy your words, autokey scripts and binaries if configured:
 
 ```
 ./install.sh

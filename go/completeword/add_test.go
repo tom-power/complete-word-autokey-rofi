@@ -27,14 +27,14 @@ func Test_add(t *testing.T) {
 	}
 
 	t.Run("can add", func(t *testing.T) {
-		err := Add(testWords, chooseSelection, "hello", noPath, noopWriteWord)
+		err := Add(testWords, chooseSelection, noPath, noopWriteWord)("hello")
 		if err != nil {
 			t.Errorf("error = %v", err)
 		}
 	})
 
 	t.Run("can't add duplicate", func(t *testing.T) {
-		err := Add(testWords, chooseFirst, "te", noPath, noopWriteWord)
+		err := Add(testWords, chooseFirst, noPath, noopWriteWord)("te")
 		if err == nil {
 			t.Error("expecting an error")
 		}

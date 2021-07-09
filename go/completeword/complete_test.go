@@ -20,7 +20,7 @@ var testWords GetWords = func() ([]string, error) {
 
 func Test_complete(t *testing.T) {
 	t.Run("can complete", func(t *testing.T) {
-		completeWord, err := Complete(testWords, chooseMatching, "foo")
+		completeWord, err := Complete(testWords, chooseMatching)("foo")
 		if err != nil {
 			t.Errorf("error = %v", err)
 		}
@@ -30,7 +30,7 @@ func Test_complete(t *testing.T) {
 	})
 
   t.Run("keep titlecase from selection", func(t *testing.T) {
-		completeWord, err := Complete(testWords, chooseMatching, "Foo")
+		completeWord, err := Complete(testWords, chooseMatching)("Foo")
 		if err != nil {
 			t.Errorf("error = %v", err)
 		}

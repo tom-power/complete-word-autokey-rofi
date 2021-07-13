@@ -29,7 +29,7 @@ func Test_complete(t *testing.T) {
 		}
 	})
 
-  t.Run("keep titlecase from selection", func(t *testing.T) {
+	t.Run("keep titlecase from selection", func(t *testing.T) {
 		completeWord, err := Complete(testWords, chooseMatching)("Foo")
 		if err != nil {
 			t.Errorf("error = %v", err)

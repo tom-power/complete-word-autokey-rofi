@@ -10,19 +10,20 @@ import (
 
 type GetWords func() ([]string, error)
 
-const wordsConfigPath = "/.config/complete-word-autokey-rofi/words/"
-
 var WordsFromHomeDir GetWords = func() ([]string, error) {
-	usr, _ := user.Current()
-	return wordsFromDir(usr.HomeDir + wordsConfigPath)
-}
-
-func wordsFromDir(dir string) ([]string, error) {
+	dir := wordsConfigDir()
 	files, err := ioutil.ReadDir(dir)
 	if err != nil {
 		return []string{}, err
 	}
 	return wordsFromFiles(filePaths(dir, files))
+}
+
+const wordsConfigPath = "/.config/complete-word-autokey-rofi/words/"
+
+func wordsConfigDir() string {
+	usr, _ := user.Current()
+	return usr.HomeDir + wordsConfigPath
 }
 
 func filePaths(dir string, files []os.FileInfo) []string {

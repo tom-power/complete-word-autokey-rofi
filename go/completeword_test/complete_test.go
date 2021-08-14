@@ -1,11 +1,12 @@
-package completeword
+package completeword_test
 
 import (
+	"../completeword"
 	"errors"
 	"testing"
 )
 
-var chooseMatching ChooseWord = func(words []string, selection string) (string, error) {
+var chooseMatching completeword.ChooseWord = func(words []string, selection string) (string, error) {
 	for _, word := range words {
 		if word == selection {
 			return word, nil
@@ -14,13 +15,13 @@ var chooseMatching ChooseWord = func(words []string, selection string) (string, 
 	return "", errors.New("no match")
 }
 
-var testWords GetWords = func() ([]string, error) {
+var testWords completeword.GetWords = func() ([]string, error) {
 	return []string{"foo", "bar", "baz"}, nil
 }
 
 func Test_complete(t *testing.T) {
 	t.Run("can complete", func(t *testing.T) {
-		completeWord, err := Complete(testWords, chooseMatching)("foo")
+		completeWord, err := completeword.Complete(testWords, chooseMatching)("foo")
 		if err != nil {
 			t.Errorf("error = %v", err)
 		}
@@ -30,7 +31,7 @@ func Test_complete(t *testing.T) {
 	})
 
 	t.Run("keep titlecase from selection", func(t *testing.T) {
-		completeWord, err := Complete(testWords, chooseMatching)("Foo")
+		completeWord, err := completeword.Complete(testWords, chooseMatching)("Foo")
 		if err != nil {
 			t.Errorf("error = %v", err)
 		}

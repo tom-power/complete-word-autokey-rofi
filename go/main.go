@@ -1,9 +1,9 @@
 package main
 
 import (
-	"./completeword"
 	"flag"
 	"fmt"
+	"github.com/tom-power/complete-wrod-autokey-rofi/completeword"
 	"os"
 )
 

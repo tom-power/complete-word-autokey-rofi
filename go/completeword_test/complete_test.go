@@ -1,8 +1,8 @@
 package completeword_test
 
 import (
-	"../completeword"
 	"errors"
+	"github.com/tom-power/complete-wrod-autokey-rofi/completeword"
 	"testing"
 )
 

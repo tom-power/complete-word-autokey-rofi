@@ -4,10 +4,10 @@
 
 ## Usage
 
-Select some text and press the shortcut bound to:
+Press the [Autokey](https://github.com/autokey/autokey) shortcut bound to:
 
-- `complete.py` to suggest words that could be used as replacements
-- `add.py` to add the selection to the list of suggestions
+- `complete.py` to select the previous word and suggest words that could be used as a replacement
+- `add.py` to add the current selection to the list of words that will be suggested
 
 ## Installation
 

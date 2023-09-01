@@ -6,8 +6,8 @@
 
 Select some text and press the shortcut bound to:
 
-- `complete.py` to suggest words from the current list
-- `add.py` to add the text to the list of suggestions
+- `complete.py` to suggest words that could be used as replacements
+- `add.py` to add the selection to the list of suggestions
 
 ## Installation
 

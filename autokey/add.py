@@ -2,8 +2,6 @@ import time
 
 selection = ""
 try:
-    keyboard.send_keys("<shift>+<ctrl>+<left>")
-    time.sleep(0.1)
     selection = clipboard.get_selection()
     time.sleep(0.1)
 except:
@@ -11,7 +9,9 @@ except:
 
 word = selection
 try:
-    system.exec_command("complete-word --add " + selection)
+    system.exec_command(
+        "echo " + selection +
+        " >> ~/.config/complete-word-autokey-rofi/words/added.txt")
     time.sleep(0.1)
 except:
     pass

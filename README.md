@@ -4,56 +4,23 @@
 
 ## Usage
 
-Place your cursor at the end of some text and press bound keys to complete or add words.
+Select some text and press the shortcut bound to:
 
-## Autokey scripts
-
-- `complete.py` complete the selected text from your words
-- `add.py` add a word to your words using the selected text
+- `complete.py` to suggest words from the current list
+- `add.py` to add the text to the list of suggestions
 
 ## Installation
 
 Install [Autokey](https://github.com/autokey/autokey) and [rofi](https://github.com/davatorium/rofi).
 
-Clone this project:
+Clone this project and run `sh/install.sh` to make the [Autokey](https://github.com/autokey/autokey) scripts accessible:
 
 ```
 git clone https://github.com/tom-power/complete-word-autokey-rofi.git &&
-cd ./complete-word-autokey-rofi
+cd ./complete-word-autokey-rofi &&
+sh/install.sh
 ```
 
-Download a matching binary from the latest [release](https://github.com/tom-power/complete-word-autokey-rofi/releases) and copy to your path i.e:
+Add [Autokey](https://github.com/autokey/autokey) shortcuts for the `complete.py` and `add.py` scripts, you should see them under `scripts/complete-word` in the main window.
 
-```
-wget -O /your/path/completeWord https://github.com/tom-power/complete-word-autokey-rofi/releases/download/v0.1/completeWord_linuxamd64
-```
-
-Or to build yourself, install [go](https://golang.org/) then:
-
-```
-cd ./go  &&
-./build.sh &&
-cp build/completeWord /your/path/completeWord
-
-```
-
-Note: if you configure your path in `install.conf.sh`, binaries will be built and copied when `install.sh` is run.
-
-Add a `.txt` file containing words to use as suggestions to the `words` directory i.e:
-
-```
-cd ./words &&
-curl https://raw.githubusercontent.com/first20hours/google-10000-english/master/20k.txt -s | grep -vwE '\w{1,6}' > gt6.txt
-```
-
-After installation you can edit this in `~/.config/complete-word-autokey-rofi/words`, and/or add new words using `add.py`.
-
-Run the install script to copy your words, autokey scripts, and binaries if configured:
-
-```
-./install.sh
-```
-
-Bind keys to the [Autokey](https://github.com/autokey/autokey) scripts, you should see them under `scripts/complete-word` in the [Autokey](https://github.com/autokey/autokey) main window.
-
-
+Add suggestions by copying `.txt` files containing line separated words to `~/.config/complete-words-autokey-rofi/words/`, or by calling `add.py`.
